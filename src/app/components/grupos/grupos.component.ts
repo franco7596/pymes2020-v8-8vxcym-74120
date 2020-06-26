@@ -36,11 +36,17 @@ export class GruposComponent implements OnInit {
   }
 
   guardar(){
+    if(this.fg.valid){
     this.lista = true;
     const objeto = {...this.fg.value}
+    console.log(objeto);
     this.servicio.post(objeto).subscribe((res: any)=>{
       window.alert('Carga exitosa');
     })
+    }
+    else{
+      window.alert('Datos mal ingresados');
+    }
   }
 
 }
