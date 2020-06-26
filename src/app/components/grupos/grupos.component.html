@@ -19,7 +19,7 @@
 <form *ngIf = '!lista' [formGroup] = "fg">
   <div class="form-group">
     <label for="exampleInputEmail1">Nivel</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)] = 'NivelGrupo' 
+    <input type="number" class="form-control" id="exampleInputEmail1" [(ngModel)] = 'NivelGrupo' 
     formControlName='NivelGrupo'>
     <small  class="form-text text-muted">Ingrese nivel del grupo</small>
   </div>
