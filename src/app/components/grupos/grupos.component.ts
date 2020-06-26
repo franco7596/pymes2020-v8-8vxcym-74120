@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GruposService } from '../../services/grupos.service';
 import { ModeloGrupo } from '../../models/modelo-grupo';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-grupos',
@@ -9,13 +10,25 @@ import { ModeloGrupo } from '../../models/modelo-grupo';
 })
 export class GruposComponent implements OnInit {
   grupos: ModeloGrupo[] = [];
-  constructor(private servicio: GruposService) { }
+  lista: boolean = true;
+  fg: FormGroup;
+  constructor(private servicio: GruposService, private fb: FormBuilder) {
+   }
 
   ngOnInit() {
      this.servicio.get()
     .subscribe((res: ModeloGrupo[]) => {
       this.grupos = res;
     });
+  }
+
+  alta(){
+    this.lista = false;
+    this.fg = fb.group({
+      IdGrupo: [0],
+      NivelGrupo: [number,[Validators.required]],
+      NombreGrupo: ["",[Validators.required]]
+    })
   }
 
 }
