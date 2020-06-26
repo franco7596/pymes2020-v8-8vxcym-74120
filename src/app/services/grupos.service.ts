@@ -21,7 +21,7 @@ export class GruposService {
   }
 
   post(objeto: ModeloGrupo){
-    return this.httpClient.post(this.url, objeto);
+    return this.httpClient.post(this.url + '/', objeto);
   }
 
 }

@@ -24,9 +24,9 @@ export class GruposComponent implements OnInit {
 
   alta(){
     this.lista = false;
-    this.fg = fb.group({
+    this.fg = this.fb.group({
       IdGrupo: [0],
-      NivelGrupo: [number,[Validators.required]],
+      NivelGrupo: [Number,[Validators.required]],
       NombreGrupo: ["",[Validators.required]]
     })
   }
@@ -36,17 +36,17 @@ export class GruposComponent implements OnInit {
   }
 
   guardar(){
-    if(this.fg.valid){
+   // if(this.fg.valid){
     this.lista = true;
     const objeto = {...this.fg.value}
     console.log(objeto);
     this.servicio.post(objeto).subscribe((res: any)=>{
       window.alert('Carga exitosa');
     })
-    }
-    else{
-      window.alert('Datos mal ingresados');
-    }
+    //}
+   // else{
+   //   window.alert('Datos mal ingresados');
+   // }
   }
 
 }
