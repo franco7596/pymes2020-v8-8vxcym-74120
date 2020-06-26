@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nivel</th>
+      <th scope="col">Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let g of grupos'>
+      <th >{{g.IdGrupo}}</th>
+      <td>{{g.NivelGrupo}}</td>
+      <td>{{g.NombreGrupo}}</td>
+    </tr>
+  </tbody>
+</table>

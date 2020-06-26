@@ -19,6 +19,8 @@ import { InicioComponent } from "./components/inicio/inicio.component";
 import { ArticulosComponent } from "./components/articulos/articulos.component";
 import { ArticulosFamiliasComponent } from "./components/articulos-familias/articulos-familias.component";
 import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.component";
+import { GruposService } from './services/grupos.service';
+import { GruposComponent } from './components/grupos/grupos.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.com
     ArticulosComponent,
     ArticulosFamiliasComponent,
     ModalDialogComponent,
+    GruposComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.com
       { path: '', redirectTo: '/inicio', pathMatch: 'full' },
       { path: 'inicio', component: InicioComponent },
       { path: 'articulos', component: ArticulosComponent },
-      { path: 'articulosfamilias', component: ArticulosFamiliasComponent }
+      { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
+      { path: 'grupos', component: GruposComponent }
     ]),
     NgbPaginationModule,
     NgbModalModule,
