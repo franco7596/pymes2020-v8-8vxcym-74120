@@ -5,6 +5,7 @@ import {
   HttpErrorResponse,
   HttpParams
 } from "@angular/common/http";
+import { ModeloGrupo } from '../models/modelo-grupo';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,10 @@ export class GruposService {
 
   get(){
     return this.httpClient.get(this.url);
+  }
+
+  post(objeto: ModeloGrupo){
+    return this.httpClient.post(this.url, objeto);
   }
 
 }
